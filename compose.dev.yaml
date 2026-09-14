@@ -1,0 +1,17 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      # bind mounts over WSL2/Windows don't emit native fs events, so force polling
+      - WATCHPACK_POLLING=true
+    volumes:
+      - .:/app
+      # anonymous volumes keep the container's own node_modules/.next
+      # instead of being overwritten by the host bind mount above
+      - /app/node_modules
+      - /app/.next
