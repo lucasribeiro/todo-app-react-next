@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <>
       <header className="bg-slate-700 py-3 text-center text-white">
-        <h1 className="m-0 text-2xl font-bold">Welcome to My ToDo App</h1>
+        <h1 className="m-0 text-2xl font-bold">Welcome to My App - GitHub Actions</h1>
       </header>
 
       <main className="flex-1">
